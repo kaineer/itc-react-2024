@@ -1,0 +1,23 @@
+body, html {
+  margin: 0; padding: 0;
+}
+
+#root {
+  display: flex;
+}
+
+table {
+  margin: auto;
+}
+
+tr:nth-child(even) {
+  background: #d8dee9;
+}
+tr:nth-child(odd) {
+  background: #e5e9f0;
+}
+
+td {
+  font-size: 24px;
+  padding: 8px;
+}
