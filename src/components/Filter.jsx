@@ -3,7 +3,7 @@ export const Filter = ({ filter, setFilter }) => {
     setFilter(e.target.value);
   }
 
-  return(<div>
+  return(<div className="filter">
     <input value={filter} onChange={handleChange} />
   </div>)
 }

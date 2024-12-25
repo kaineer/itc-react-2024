@@ -4,6 +4,16 @@ body, html {
 
 #root {
   display: flex;
+  flex-direction: column;
+}
+
+input, button {
+  font-size: 24px;
+}
+
+.filter {
+  text-align: center;
+  margin: 10px;
 }
 
 table {

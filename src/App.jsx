@@ -7,8 +7,8 @@ function App() {
   const [ data, setData ] = useState([]);
   const [ filter, setFilter ] = useState("");
 
-  const filteredData = ((data || [])
-    .filter((user) => user.name.includes(filter)));
+  const filteredData = (data || [])
+    .filter((user) => user.name.includes(filter));
 
   useEffect(() => {
     const url = "http://localhost:3000/users";
@@ -21,13 +21,15 @@ function App() {
   return (
     <>
       <Filter filter={filter} setFilter={setFilter}></Filter>
-      <table>
-        <tbody>
-          { filteredData.map(
-            user => <UserRow user={user}/>
-          )}
-        </tbody>
-      </table>
+      <div>
+        <table>
+          <tbody>
+            { filteredData.map(
+              user => <UserRow user={user}/>
+            )}
+          </tbody>
+        </table>
+      </div>
     </>
   )
 }
