@@ -20,11 +20,11 @@ function App() {
 
   return (
     <>
-    <Filter filter={filter} setFilter={setFilter}></Filter>
+      <Filter filter={filter} setFilter={setFilter}></Filter>
       <table>
         <tbody>
           { filteredData.map(
-              user => <UserRow user={user}/>
+            user => <UserRow user={user}/>
           )}
         </tbody>
       </table>
