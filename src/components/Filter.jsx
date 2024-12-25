@@ -1,10 +1,9 @@
-export const Filter = (props) => {
-  const filter = props.filter;
-  const setFilter = props.setFilter;
+export const Filter = ({ filter, setFilter }) => {
+  const handleChange = (e) => {
+    setFilter(e.target.value);
+  }
 
   return(<div>
-    <input value={filter} onChange={function(e) {
-      setFilter(e.target.value);
-    }}/>
+    <input value={filter} onChange={handleChange} />
   </div>)
 }

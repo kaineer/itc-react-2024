@@ -7,27 +7,25 @@ function App() {
   const [ data, setData ] = useState([]);
   const [ filter, setFilter ] = useState("");
 
+  const filteredData = ((data || [])
+    .filter((user) => user.name.includes(filter)));
+
   useEffect(() => {
     const url = "http://localhost:3000/users";
 
-    fetch(url).then(function(resp) {
-      return(resp.json())
-    }).then(function(users) {
-      setData(users)
-    })
+    fetch(url)
+      .then((resp) => resp.json())
+      .then(setData)
   }, [])
-console.log(filter);
+
   return (
     <>
     <Filter filter={filter} setFilter={setFilter}></Filter>
       <table>
         <tbody>
-          { data.filter(function(user) {
-            return(user.name.includes(filter))
-          }).map(User => {
-            return(<UserRow user={User}/>)
-          })
-          }
+          { filteredData.map(
+              user => <UserRow user={user}/>
+          )}
         </tbody>
       </table>
     </>
